@@ -1,3 +1,6 @@
+
+import {GiShoppingCart} from 'react-icons/gi'
+import Badge from 'react-bootstrap/Badge';
 const CartWidget=()=>{
 
     const style={
@@ -5,8 +8,8 @@ const CartWidget=()=>{
     }
     return(
         <div>
-            <span></span>
-            <span style={style}>10</span>
+            <span><GiShoppingCart fontSize={'2rem'}/></span>
+            <Badge bg="primary">10</Badge>
         </div>
     )
 }

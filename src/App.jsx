@@ -4,6 +4,8 @@ import ItemCount from './components/ItemCount'
 import BotonMultiuso from './examples/BotonMultiuso'
 import ComponenteConChildren from './examples/ComponenteConChildren'
 import NavBar from './components/NavBar'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ItemListContainer from './components/ItemListContainer'
 
 
 function App() {
@@ -16,8 +18,9 @@ function App() {
   return (
     <>
     <NavBar/>
+    <ItemListContainer mensaje="Amadeo Espinosa"/>
     {/*<ItemCount/>*/}
-      <BotonMultiuso color={"red"} padding={"2rem"} borderRadius={'10%'} onclickHandler={saludar}/>
+     {/*} <BotonMultiuso color={"red"} padding={"2rem"} borderRadius={'10%'} onclickHandler={saludar}/>
       <BotonMultiuso color={"yellow"} padding={"1rem"} borderRadius={'5%'} onclickHandler={log}/>
 
       <ComponenteConChildren>
@@ -25,7 +28,7 @@ function App() {
         <BotonMultiuso color={"yellow"} padding={"1rem"} borderRadius={'5%'} onclickHandler={log}/>
         <BotonMultiuso color={"yellow"} padding={"1rem"} borderRadius={'5%'} onclickHandler={log}/>
         <BotonMultiuso color={"yellow"} padding={"1rem"} borderRadius={'5%'} onclickHandler={log}/>
-      </ComponenteConChildren>
+      </ComponenteConChildren>*/}
     </>
   )
 }
