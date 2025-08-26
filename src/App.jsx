@@ -1,34 +1,27 @@
 
 import './App.css'
-import ItemCount from './components/ItemCount'
-import BotonMultiuso from './examples/BotonMultiuso'
-import ComponenteConChildren from './examples/ComponenteConChildren'
 import NavBar from './components/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import ItemDetailContainer from './components/ItemDetailContainer'
 import ItemListContainer from './components/ItemListContainer'
+import './css/Estilo.css'
+import Error from './components/Error'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 
 function App() {
- const saludar=()=>{
-  alert('Hola chicos')
- }
- const log=()=>{
-  console.log('Log')
- }
   return (
+    
     <>
-    <NavBar/>
-    <ItemListContainer mensaje="Amadeo Espinosa"/>
-    {/*<ItemCount/>*/}
-     {/*} <BotonMultiuso color={"red"} padding={"2rem"} borderRadius={'10%'} onclickHandler={saludar}/>
-      <BotonMultiuso color={"yellow"} padding={"1rem"} borderRadius={'5%'} onclickHandler={log}/>
-
-      <ComponenteConChildren>
-        <p>Hola soy una children</p>
-        <BotonMultiuso color={"yellow"} padding={"1rem"} borderRadius={'5%'} onclickHandler={log}/>
-        <BotonMultiuso color={"yellow"} padding={"1rem"} borderRadius={'5%'} onclickHandler={log}/>
-        <BotonMultiuso color={"yellow"} padding={"1rem"} borderRadius={'5%'} onclickHandler={log}/>
-      </ComponenteConChildren>*/}
+    <BrowserRouter>
+      <NavBar/>
+      <Routes>
+        <Route exact path='/' element={<ItemListContainer mensaje="Bienvenido"/>} />
+        <Route exac path='/producto/:id' element={<ItemDetailContainer/>} />
+        <Route exact path='/categories/:filtro' element={<ItemListContainer/>} />
+        <Route exact path='*' element={<Error/>} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
