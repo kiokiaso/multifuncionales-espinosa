@@ -27,9 +27,9 @@ Para ver el proyecto funcionando en línea debes ingresar [aquí](https://multif
 Es de libre uso y disponible para colaboración
 
 ## Características
--Fácil de instalar
--Interfaz amigable
--Soporte multiplataforma
+- Fácil de instalar
+- Interfaz amigable
+- Soporte multiplataforma
 
 ## Desarollo
 Amadeo Espinosa
