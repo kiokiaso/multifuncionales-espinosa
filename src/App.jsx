@@ -19,7 +19,7 @@ function App() {
     <CartProvider>
       <NavBar/>
       <Routes>
-        <Route exact path='/' element={<ItemListContainer mensaje="Bienvenido"/>} />
+        <Route exact path='/' element={<ItemListContainer mensaje="Home"/>} />
         <Route exac path='/producto/:id' element={<ItemDetailContainer/>} />
         <Route exact path='/categories/:filtro' element={<ItemListContainer/>} />
         <Route exact path='/cart' element={<CartContainer/>} />

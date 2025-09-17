@@ -26,11 +26,12 @@ const ItemListContainer=({mensaje})=>{
                     }
                 })
                 setData(lista)
-                setMsj(filtro);
             })
             .catch((error)=>console.error(error))
             .finally(()=>setLoader(false))
+        if(filtro) {setMsj(filtro)}
     },[filtro]);
+    
     
     return (
         <>
