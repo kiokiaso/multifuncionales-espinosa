@@ -1,11 +1,11 @@
-//import logo from '../assets/react.svg'
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../css/NavBar.css'
 import {Link, NavLink} from 'react-router-dom'
-
 import CartWidget from './CartWidget';
+
 const NavBar=()=>{
     return (
     <Navbar collapseOnSelect expand="lg" className="bg-white">
@@ -21,12 +21,12 @@ const NavBar=()=>{
           </Nav>
         </Navbar.Collapse>
           <Nav>
-            <CartWidget/>
+            <NavLink style={{textDecoration:'none'}} to='/cart'><CartWidget/></NavLink>
+            
           </Nav>
       </Container>
     </Navbar>
   );
 }
-
 
 export default NavBar

@@ -1,4 +1,4 @@
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card'
 import {Link} from 'react-router-dom'
 
@@ -10,7 +10,7 @@ function Item({prod}){
             <Card.Body>
                 <Card.Title>{prod.name}</Card.Title>
                 <Card.Text>
-                    ${prod.price},00
+                    ${prod.price.toLocaleString()}.00
                 </Card.Text>
                 <Link to={`/producto/${prod.id}`} className='btn btn-primary'>Ver más</Link>
             </Card.Body>

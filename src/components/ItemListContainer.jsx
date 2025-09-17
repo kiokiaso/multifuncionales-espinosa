@@ -1,32 +1,45 @@
 
 import { useEffect,useState } from 'react';
-import { getProducts } from '../mock/AsyncMock';
 import ItemList from './ItemList'
 import {useParams} from 'react-router-dom'
+import LoaderComponent from './LoaderComponent';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../services/firebase';
+
 const ItemListContainer=({mensaje})=>{
     const [data,setData]=useState([]);
     const {filtro}=useParams();
+    const [loader,setLoader]=useState(false)
     const [msj,setMsj]=useState(mensaje);
+
     useEffect(()=>{
-        getProducts()
-        .then((res)=>{
-            if(filtro){
-                setMsj('Categoria: '+filtro);
-                let articulos=res.filter((item)=>item.category===filtro)
-                setData(articulos)
-            }else{
-                setData(res)
-                setMsj(mensaje)
-            }
-        })
-        .catch((error)=>console.error(error))
+        setLoader(true);
+        const productsCollection=filtro ?
+        query(collection(db,"multifuncionales"),where("category","==",filtro)) 
+        :collection(db,"multifuncionales");
+        getDocs(productsCollection)
+            .then((res)=>{
+                const lista=res.docs.map((doc)=>{
+                    return{
+                        id:doc.id,
+                        ...doc.data()
+                    }
+                })
+                setData(lista)
+                setMsj(filtro);
+            })
+            .catch((error)=>console.error(error))
+            .finally(()=>setLoader(false))
     },[filtro]);
     
     return (
-        <div>
+        <>
+        {loader ? <LoaderComponent/>
+        :<div className='container'>
             <h1>{msj}</h1>
             <ItemList data={data} />
-        </div>
+        </div>}
+        </>
     );
 }
 
