@@ -4,14 +4,14 @@ import ItemList from './ItemList'
 import {useParams} from 'react-router-dom'
 import LoaderComponent from './LoaderComponent';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { db } from '../services/firebase';
-
+import { db } from '../services/firebase.js';
 const ItemListContainer=({mensaje})=>{
     const [data,setData]=useState([]);
     const {filtro}=useParams();
     const [loader,setLoader]=useState(false)
     const [msj,setMsj]=useState(mensaje);
 
+    //FireBase
     useEffect(()=>{
         setLoader(true);
         const productsCollection=filtro ?
@@ -40,6 +40,7 @@ const ItemListContainer=({mensaje})=>{
             <ItemList data={data} />
         </div>}
         </>
+        
     );
 }
 

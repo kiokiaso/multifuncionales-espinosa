@@ -9,7 +9,7 @@ Para la instalación debes seguir los siguientes pasos
 
 ```bash
 git clone https://github.com/kiokiaso/multifuncionales-espinosa.git
-cd multifuncionales
+cd multifuncionales-espinosa
 npm install
 npm run dev
 ```
