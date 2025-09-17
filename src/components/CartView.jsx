@@ -8,14 +8,15 @@ const CartView = () => {
     const {cart,removeItem,clear,total,subTotal}=useContext(CartContext)
   return (
     <>
+      
     <Container className='mt-5'>
       <h1>Tu carrito</h1>
             <Row className='d-flex justify-content-center align-items-center'>
                 <Col sm={10}></Col>
                 {
                   cart.map((compra)=>(
-                    <Card className='mb-2'>
-                            <Card.Body key={compra.id} style={{display:'flex', justifyContent:'space-between',alignItems:'center',width:'100%',padding:'2rem'}}>
+                    <Card className='mb-2' key={compra.id}>
+                            <Card.Body  style={{display:'flex', justifyContent:'space-between',alignItems:'center',width:'100%',padding:'2rem'}}>
                                 <img src={compra.img} alt={compra.name} style={{width:'9rem'}}/>
                                 <span>{compra.name}</span>
                                 <span>${compra.price.toLocaleString()}.00</span>
@@ -40,6 +41,7 @@ const CartView = () => {
             </Row>
         </Container>
     </>
+    
   )
 }
 
