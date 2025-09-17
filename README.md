@@ -18,10 +18,10 @@ Para ver el proyecto funcionando en línea debes ingresar [aquí](https://multif
 
 ## Librerías
 - [React](https://es.react.dev/): Utilizada para mejorar la experiencia del usuario y la velocidad de carga
-- [react-bootstrap](https://react-bootstrap.netlify.app/):Es utilizada para dar un estilo más amigable para el usuario
-- [firebase](https://firebase.google.com/):Almacena la base de datos
-- [react-router-dom](https://www.npmjs.com/package/react-router-dom):Sirve para tener la navegación dentro de la página sin tener que recargar
-- [react-icons]() :Es utilizada para tener iconos más estilizados
+- [react-bootstrap](https://react-bootstrap.netlify.app/): Es utilizada para dar un estilo más amigable para el usuario
+- [firebase](https://firebase.google.com/): Almacena la base de datos
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom): Sirve para tener la navegación dentro de la página sin tener que recargar
+- [react-icons]() : Es utilizada para tener iconos más estilizados
 
 ## Licencia
 Es de libre uso y disponible para colaboración
