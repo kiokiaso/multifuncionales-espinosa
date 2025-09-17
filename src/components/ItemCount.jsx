@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react"
-import {Button,Col,Row,Form,InputGroup} from 'react-bootstrap'
-function ItemCount(stock) {
+import {  useState } from "react"
+import {Button,Col,Row,Form} from 'react-bootstrap'
+function ItemCount({stock,onAdd}) {
  
     const [count,setCount]=useState(0)
-    const [exis,useExis]=useState(stock.stock);
     const sumar=()=>{
-      //console.log(stock.stock)
-      count===stock.stock ? setCount(stock.stock):setCount(count+1)
+      count===stock ? setCount(stock):setCount(count+1)
     }
     const restar=()=>{
       count===0 ? setCount(0):setCount(count-1)
@@ -36,9 +34,11 @@ function ItemCount(stock) {
           </Button>
         </Col>
       </Row>
+      <Row className="alig-items-center">
+        <Button variant="outline-primary" disabled={stock===0 || count===0} onClick={()=>onAdd(count)}>Comprar</Button>
+      </Row>
     </Form>
   );
 }
-
 
 export default ItemCount
