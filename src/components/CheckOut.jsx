@@ -74,7 +74,7 @@ if(!cart.length && !orderId){
                     <Col sm={4}>
                         <Card>
                             <Card.Body>
-                                <Card.Title>Amadeo Espinosa tu compra se ha registrado de forma correcta</Card.Title>
+                                <Card.Title>{data.name} {data.apellidos} tu compra se ha registrado de forma correcta</Card.Title>
                                 <Card.Text>
                                     Con el folio siguiente: {orderId}
                                 </Card.Text>
